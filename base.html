@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ОстеоФарма | Информационный портал по остеопорозу</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-xl medical-navbar py-2">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center text-white text-decoration-none gap-3" href="base.html">
+                    <img src="images/logo.png" alt="ОстеоФарма логотип" class="logo-img" onerror="this.src='https://placehold.co/60x60?text=OF'">
+                    <div class="text-start">
+                        <span class="site-title d-block">ОстеоФарма</span>
+                        <small class="site-subtitle d-block">Образовательная программа по рациональному<br> назначению лекарственных препаратов при остеопорозе</small>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="#" data-page="medicinal-products"><i class="fas fa-capsules"></i> Лекарственные препараты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-page="supplements"><i class="fas fa-leaf"></i> БАДы</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-page="makers"><i class="fas fa-industry"></i> Производители</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-page="questionnaire"><i class="fas fa-clipboard-list"></i> Анкета</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-page="clinical-recommendations"><i class="fas fa-file-alt"></i> Клинические рекомендации</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-banner">
+            <img src="images/screensaver.jpg" alt="Медицинский баннер остеопороз" class="hero-image" onerror="this.src='https://placehold.co/1200x400?text=Остеопороз+диссертация'">
+            <div class="hero-overlay"></div>
+            <div class="hero-text text-center">
+                <div class="container">
+                    <p class="mb-5 fw-semibold">
+                        <i class="me-2 opacity-75"></i> 
+                        Сайт является проектом, <br> разработанным в рамках диссертационного исследования по теме <br>
+                        «Организационно-методические основы перспективного развития региональной системы фармацевтической помощи больным остеопорозом в Пензенской области».
+                        <i class="ms-2 opacity-75"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <content>
+            <!-- Сюда будет вставлена информация из фрагментов -->
+        </content>
+
+        <!-- Блок с карточками – 6 штук, всегда виден -->
+        <div class="container py-3" id="mainCards">
+            <h2 class="section-title">Ключевые направления портала</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card resource-card p-3 h-100 rounded-4">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fas fa-tablets"></i></div>
+                            <h5 class="card-title fw-bold">Лекарственные препараты</h5>
+                            <p class="card-text text-secondary">Актуальные данные об эффективных схемах терапии остеопороза, бисфосфонаты, деносумаб и новейшие разработки.</p>
+                            <a href="#" class="btn btn-outline-med mt-2 px-4" data-page="medicinal-products">Перейти →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card resource-card p-3 h-100 rounded-4">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                            <h5 class="card-title fw-bold">Биологически активные добавки</h5>
+                            <p class="card-text text-secondary">Витамин D, кальций, микроэлементы. Доказательная база и рекомендации по приёму.</p>
+                            <a href="#" class="btn btn-outline-med mt-2 px-4" data-page="supplements">Изучить →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card resource-card p-3 h-100 rounded-4">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fas fa-building"></i></div>
+                            <h5 class="card-title fw-bold">Производители</h5>
+                            <p class="card-text text-secondary">Российские и международные фармкомпании, препараты на фармрынке, регистрационные удостоверения.</p>
+                            <a href="#" class="btn btn-outline-med mt-2 px-4" data-page="makers">К списку →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card resource-card p-3 h-100 rounded-4">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fas fa-notes-medical"></i></div>
+                            <h5 class="card-title fw-bold">Клинические рекомендации</h5>
+                            <p class="card-text text-secondary">Актуальные протоколы лечения, скрининг, маршрутизация пациентов с остеопорозом, РКИ.</p>
+                            <a href="#" class="btn btn-outline-med mt-2 px-4" data-page="clinical-recommendations">Читать →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card resource-card p-3 h-100 rounded-4">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fas fa-clinic-medical"></i></div>
+                            <h5 class="card-title fw-bold">Анкета пациента</h5>
+                            <p class="card-text text-secondary">Оценка факторов риска, приверженность терапии: опросники для врачей и фармацевтов.</p>
+                            <a href="#" class="btn btn-outline-med mt-2 px-4" data-page="questionnaire">Пройти →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card resource-card p-3 h-100 rounded-4">
+                        <div class="card-body text-center">
+                            <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
+                            <h5 class="card-title fw-bold">Образовательные материалы</h5>
+                            <p class="card-text text-secondary">Вебинары, памятки, алгоритмы для специалистов и пациентов.</p>
+                            <a href="#" class="btn btn-outline-med mt-2 px-4" data-page="materials">Подробнее →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-gradient">
+        <div class="container pt-5 pb-3">
+            <div class="row gy-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-title">📘 О сайте</div>
+                    <p class="small opacity-75">Информационно-образовательный портал «ОстеоФарма» — проект в рамках диссертационного исследования, посвящённый совершенствованию фармацевтической помощи больным остеопорозом в Пензенской области.</p>
+                    <p class="small mt-2"><i class="fas fa-calendar-alt me-1"></i> 2026 г.</p>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="footer-title">📖 Диссертационное исследование</div>
+                    <p class="small opacity-75">«Организационно-методические основы перспективного развития региональной системы фармацевтической помощи больным остеопорозом в Пензенской области».</p>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-title">📞 Контакты</div>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><i class="fas fa-user-md me-2"></i> <strong>Руководитель проекта</strong><br>Пронькина Анна Александровна</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> <a href="mailto:annapronkina2308@gmail.com" class="footer-link">annapronkina2308@gmail.com</a></li>
+                        <li class="mb-2"><i class="fas fa-globe me-2"></i> Пензенская область, РФ</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="footer-title">🛠️ Разработка</div>
+                    <p class="small mb-1"><i class="fas fa-code"></i> Техническая реализация:</p>
+                    <a href="mailto:annapronkina2308@gmail.com" class="footer-link d-block mb-2">mit.nikit4@yanex.ru</a>
+                    <p class="small mt-2"><i class="fas fa-shield-alt"></i> Все материалы носят научно-образовательный характер.</p>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-center text-md-start">
+                    <p class="small mb-0 opacity-75">© 2026 ОстеоФарма | В рамках диссертационного исследования по фармацевтической помощи</p>
+                </div>
+                <div class="col-md-5 text-center text-md-end">
+                    <a href="#" class="text-white-50 text-decoration-none small me-3"><i class="fas fa-arrow-up"></i> Наверх</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy py-2 text-center">
+            <span class="small">Разработано в рамках диссертации. Информация предназначена для специалистов и пациентов.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

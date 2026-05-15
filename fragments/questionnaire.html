@@ -1,0 +1,149 @@
+<div class="container my-5">
+    <div class="alert alert-info bg-white border-0 shadow-sm rounded-4 p-4" style="border-left: 6px solid #1f8aad;">
+        <div class="d-flex gap-3 flex-wrap align-items-center mb-4">
+            <div><i class="fas fa-clipboard-list fa-3x" style="color:#0c6b7e;"></i></div>
+            <div>
+                <h5 class="fw-bold mb-1">Анкета «Оценка уровня знаний респондентов об остеопорозе»</h5>
+                <p class="mb-0 text-secondary">Пожалуйста, ответьте на все вопросы. После заполнения нажмите «Отправить анкету» – ответы придут мне на почту.</p>
+            </div>
+            <div class="ms-auto">
+                <button type="button" id="downloadReportBtn" class="btn btn-outline-med"><i class="fas fa-download me-1"></i> Скачать отчёт (JSON)</button>
+                <a href="ВАША_ССЫЛКА_НА_GOOGLE_ФОРМУ" target="_blank" class="btn btn-outline-med ms-2"><i class="fab fa-google"></i> Заполнить в Google Форме</a>
+            </div>
+        </div>
+
+        <form id="osteoporosisSurvey" action="https://formspree.io/f/ВАШ_КЛЮЧ_FORMSPREE" method="POST">
+            <input type="hidden" name="answers" id="answersJson">
+
+            <!-- 1. Возраст -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">1. Укажите Ваш возраст</label>
+                <div class="form-check"><input class="form-check-input" type="radio" name="age" value="20-30 лет" id="age1" required><label class="form-check-label" for="age1">20-30 лет</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="age" value="30-40 лет" id="age2"><label class="form-check-label" for="age2">30-40 лет</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="age" value="40-50 лет" id="age3"><label class="form-check-label" for="age3">40-50 лет</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="age" value="50-65 лет" id="age4"><label class="form-check-label" for="age4">50-65 лет</label></div>
+            </div>
+
+            <!-- 2. Пол -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">2. Укажите Ваш пол</label>
+                <div class="form-check"><input class="form-check-input" type="radio" name="gender" value="Женский" id="genderF" required><label class="form-check-label" for="genderF">Женский</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="gender" value="Мужской" id="genderM"><label class="form-check-label" for="genderM">Мужской</label></div>
+            </div>
+
+            <!-- 3. Образование -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">3. Укажите Ваш уровень образования</label>
+                <div class="form-check"><input class="form-check-input" type="radio" name="education" value="Полное высшее образование" id="edu1" required><label class="form-check-label" for="edu1">Полное высшее образование</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="education" value="Неполное высшее образование" id="edu2"><label class="form-check-label" for="edu2">Неполное высшее образование</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="education" value="Среднее специальное образование" id="edu3"><label class="form-check-label" for="edu3">Среднее специальное образование</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="education" value="Среднее общее образование" id="edu4"><label class="form-check-label" for="edu4">Среднее общее образование</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="education" value="2 и более высших образования" id="edu5"><label class="form-check-label" for="edu5">2 и более высших образования</label></div>
+            </div>
+
+            <!-- 4. Отношение к медицине -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">4. Имеете ли Вы отношение к медицине?</label>
+                <div class="form-check"><input class="form-check-input" type="radio" name="medicalRelation" value="Да" id="medYes" required><label class="form-check-label" for="medYes">Да</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="medicalRelation" value="Нет" id="medNo"><label class="form-check-label" for="medNo">Нет</label></div>
+            </div>
+
+            <!-- 5. Знание остеопороза -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">5. Знаете ли Вы, что такое остеопороз?</label>
+                <div class="form-check"><input class="form-check-input" type="radio" name="whatIsOsteoporosis" value="Заболевание позвоночника" id="what1" required><label class="form-check-label" for="what1">Заболевание позвоночника, при котором межпозвоночные диски утрачивают способность к нормальному функционированию</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="whatIsOsteoporosis" value="Заболевание костей со снижением плотности" id="what2"><label class="form-check-label" for="what2">Заболевание костей, характеризующееся снижением их плотности</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="whatIsOsteoporosis" value="Заболевание суставов" id="what3"><label class="form-check-label" for="what3">Заболевание суставов, характеризующееся дегенерацией хрящевой ткани</label></div>
+            </div>
+
+            <!-- 6. Знакомые с остеопорозом -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">6. Есть ли среди Ваших знакомых люди с подтвержденным диагнозом остеопороз?</label>
+                <div class="form-check"><input class="form-check-input" type="radio" name="acquaintances" value="Да" id="acqYes" required><label class="form-check-label" for="acqYes">Да</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="acquaintances" value="Нет" id="acqNo"><label class="form-check-label" for="acqNo">Нет</label></div>
+            </div>
+
+            <!-- 7. Методы диагностики -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">7. Знаете ли Вы методы диагностики остеопороза? (можно выбрать несколько)</label>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="diagnostics" value="Рентген" id="diag1"><label class="form-check-label" for="diag1">Рентген</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="diagnostics" value="Денситометрия" id="diag2"><label class="form-check-label" for="diag2">Денситометрия</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="diagnostics" value="Сбор анамнеза" id="diag3"><label class="form-check-label" for="diag3">Сбор анамнеза</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="diagnostics" value="Определение биохимических маркеров" id="diag4"><label class="form-check-label" for="diag4">Определение биохимических маркеров</label></div>
+            </div>
+
+            <!-- 8. Методы профилактики -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">8. Знаете ли Вы методы профилактики остеопороза? (можно выбрать несколько)</label>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="prevention" value="Потребление продуктов, содержащих кальций" id="prev1"><label class="form-check-label" for="prev1">Потребление продуктов, содержащих кальций</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="prevention" value="Активный образ жизни" id="prev2"><label class="form-check-label" for="prev2">Активный образ жизни</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="prevention" value="Витамин D" id="prev3"><label class="form-check-label" for="prev3">Витамин D</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="prevention" value="Похудение" id="prev4"><label class="form-check-label" for="prev4">Похудение</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="prevention" value="Уменьшение потребления соли" id="prev5"><label class="form-check-label" for="prev5">Уменьшение потребления соли</label></div>
+            </div>
+
+            <!-- 9. Клинические проявления -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">9. Знаете ли Вы клинические проявления остеопороза? (можно выбрать несколько)</label>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="symptoms" value="Хрупкость костей" id="sym1"><label class="form-check-label" for="sym1">Хрупкость костей</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="symptoms" value="Боль в мышцах" id="sym2"><label class="form-check-label" for="sym2">Боль в мышцах</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="symptoms" value="Быстрая утомляемость" id="sym3"><label class="form-check-label" for="sym3">Быстрая утомляемость</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="symptoms" value="Боль в суставах" id="sym4"><label class="form-check-label" for="sym4">Боль в суставах</label></div>
+            </div>
+
+            <!-- 10. Последствия и осложнения -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">10. Знаете ли Вы последствия и осложнения остеопороза? (можно выбрать несколько)</label>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="consequences" value="Патологические переломы" id="cons1"><label class="form-check-label" for="cons1">Патологические переломы</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="consequences" value="Снижение способности к передвижению" id="cons2"><label class="form-check-label" for="cons2">Снижение способности к передвижению</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="consequences" value="Снижение иммунитета" id="cons3"><label class="form-check-label" for="cons3">Снижение иммунитета</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="consequences" value="Артралгия" id="cons4"><label class="form-check-label" for="cons4">Артралгия</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="consequences" value="Миалгия" id="cons5"><label class="form-check-label" for="cons5">Миалгия</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="consequences" value="Инвалидизация" id="cons6"><label class="form-check-label" for="cons6">Инвалидизация</label></div>
+            </div>
+
+            <!-- 11. Препараты для лечения -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">11. Знаете ли Вы основные препараты, применяемые для лечения остеопороза? (можно выбрать несколько)</label>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="drugs" value="Бисфосфонаты" id="drug1"><label class="form-check-label" for="drug1">Бисфосфонаты</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="drugs" value="Витамин D" id="drug2"><label class="form-check-label" for="drug2">Витамин D</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="drugs" value="Препараты кальция" id="drug3"><label class="form-check-label" for="drug3">Препараты кальция</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="drugs" value="Бигуаниды" id="drug4"><label class="form-check-label" for="drug4">Бигуаниды</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="drugs" value="Сульниламиды" id="drug5"><label class="form-check-label" for="drug5">Сульниламиды</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="drugs" value="Глюкокортикостероиды" id="drug6"><label class="form-check-label" for="drug6">Глюкокортикостероиды</label></div>
+            </div>
+
+            <!-- 12. Наиболее частые виды переломов -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">12. Знаете ли Вы наиболее частые виды переломов при остеопорозе? (можно выбрать несколько)</label>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="fractures" value="Перелом дистального отдела предплечья" id="frac1"><label class="form-check-label" for="frac1">Перелом дистального отдела предплечья</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="fractures" value="Перелом проксимального бедра" id="frac2"><label class="form-check-label" for="frac2">Перелом проксимального бедра</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="fractures" value="Переломы позвонков" id="frac3"><label class="form-check-label" for="frac3">Переломы позвонков</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="fractures" value="Перелом ребер" id="frac4"><label class="form-check-label" for="frac4">Перелом ребер</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="fractures" value="Перелом ключицы" id="frac5"><label class="form-check-label" for="frac5">Перелом ключицы</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="fractures" value="Перелом лучевой кости" id="frac6"><label class="form-check-label" for="frac6">Перелом лучевой кости</label></div>
+            </div>
+
+            <!-- 13. Источники информации -->
+            <div class="mb-4">
+                <label class="fw-bold mb-2">13. Откуда Вы узнали о заболевании остеопороз? (можно выбрать несколько)</label>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="infoSource" value="Врач" id="info1"><label class="form-check-label" for="info1">Врач</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="infoSource" value="Медицинская литература" id="info2"><label class="form-check-label" for="info2">Медицинская литература</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="infoSource" value="Телевидение" id="info3"><label class="form-check-label" for="info3">Телевидение</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="infoSource" value="Интернет" id="info4"><label class="form-check-label" for="info4">Интернет</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="infoSource" value="Знакомые/родственники/друзья" id="info5"><label class="form-check-label" for="info5">Знакомые/родственники/друзья</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="infoSource" value="Газеты/радио" id="info6"><label class="form-check-label" for="info6">Газеты/радио</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" name="infoSource" value="Другое" id="info7"><label class="form-check-label" for="info7">Другое</label></div>
+                <input type="text" class="form-control mt-2" id="infoOtherText" placeholder="Если другое, укажите" style="display: none;">
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-primary px-4">Отправить анкету на почту</button>
+                <button type="reset" class="btn btn-secondary px-4">Очистить форму</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Подключаем внешний скрипт (файл лежит в корне проекта) -->
+<script src="../survey.js"></script>
